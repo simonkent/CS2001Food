@@ -8,6 +8,8 @@ import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
 
+    FavouriteFoodManager foodManager = new SimonsTestFavouriteFoodManager();
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -21,7 +23,7 @@ public class MainActivity extends AppCompatActivity {
                                       @Override
                                       public void onClick(View v) {
                                           TextView foodView = (TextView)findViewById(R.id.food_textview);
-                                          foodView.setText("chocolate");
+                                          foodView.setText(foodManager.getFavouriteFood());
                                       }
                                   }
         );
