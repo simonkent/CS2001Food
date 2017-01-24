@@ -1,0 +1,17 @@
+apply plugin: 'java'
+apply plugin:'application'
+
+repositories {
+    // Use 'jcenter' for resolving your dependencies.
+    // You can declare any Maven/Ivy/file repository here.
+    jcenter()
+}
+
+// In this section you declare the dependencies for your production and test code
+dependencies {
+    compile group: 'javax.servlet', name: 'javax.servlet-api', version: '3.1.0'
+    compile group: 'org.mortbay.jetty', name: 'jetty', version: '4.2.12'
+    testCompile 'junit:junit:4.12'
+}
+
+mainClassName = "uk.ac.brunel.cs2001.food.server.JettyStart"

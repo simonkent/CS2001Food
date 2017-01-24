@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="Gradle: org.mortbay.jetty:jetty:4.2.12">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.mortbay.jetty/jetty/4.2.12/5ebbb51c61497b32e0ae5307af979a528318925c/jetty-4.2.12.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
