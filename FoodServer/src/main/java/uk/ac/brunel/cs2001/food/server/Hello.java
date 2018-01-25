@@ -2,6 +2,7 @@ package uk.ac.brunel.cs2001.food.server;
 
 /**
  * Created by simonkent on 24/01/2017.
+ * This is a very simple servlet which just returns the plain text "Hello World".
  */
 
     import javax.servlet.ServletException;
@@ -17,7 +18,7 @@ package uk.ac.brunel.cs2001.food.server;
         {
             httpServletResponse.setContentType("text/plain");
             PrintWriter out = httpServletResponse.getWriter();
-            out.println("Hello CS2001");
+            out.println("Hello World");
             out.close();
         }
     }

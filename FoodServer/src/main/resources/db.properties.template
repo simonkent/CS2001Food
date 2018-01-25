@@ -1,0 +1,8 @@
+# Properties for database connection
+# This template should be renamed db.properties and valid values set below
+# N.B. It should not be stored in github!!!
+
+uk.ac.brunel.food.server.mysql_ip=IP:PORT
+uk.ac.brunel.food.server.mysql_db=DBNAME
+uk.ac.brunel.food.server.mysql_username=username
+uk.ac.brunel.food.server.mysql_password=password

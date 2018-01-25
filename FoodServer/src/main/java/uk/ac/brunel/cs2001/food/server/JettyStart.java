@@ -4,7 +4,7 @@ import org.mortbay.jetty.Server;
 import org.mortbay.jetty.servlet.ServletHttpContext;
 
 /*
-This class starts a very lightweight Jetty Servlet container
+This class starts a very lightweight Jetty Servlet container hosted on port 8085
  */
 
 public class JettyStart
