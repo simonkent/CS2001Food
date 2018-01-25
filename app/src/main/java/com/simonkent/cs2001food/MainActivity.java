@@ -8,7 +8,10 @@ import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
 
-    FavouriteFoodManager foodManager = new SimonsTestFavouriteFoodManager();
+    // The first line below uses the test implementation
+    //FavouriteFoodManager foodManager = new TestFavouriteFoodManager();
+    // Swap to this line (commenting out the one above) to use the Servlet version of the foodManager
+    FavouriteFoodManager foodManager = new ServletFoodManager();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -16,8 +19,6 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         Button button = (Button)findViewById(R.id.press_button);
-
-
 
         button.setOnClickListener(new View.OnClickListener() {
                                       @Override

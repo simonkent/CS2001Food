@@ -6,20 +6,26 @@ import java.io.BufferedInputStream;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
-import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
 
 /**
  * Created by simonkent on 22/01/2018.
+ * A very simple example of using an HTTP connection to retrieve data from a Jetty Server
  */
-public class JDBCFoodManager implements FavouriteFoodManager {
+public class ServletFoodManager implements FavouriteFoodManager {
+
+    // This defines the server that the mobile is going to connect to
+    // Be careful . . if you use localhost, the device will try to connect to itself.
+    // Use the ip address on the network that both your server and your device are connected.
+    // If you want to use a real Android Device, and connect to a public internet address, have a look at using ngrok
+    private static final String IP = "XXX.XXX.XXX.XXX:8085";
 
     private String food = "";
     @Override
     public String getFavouriteFood()  {
-        AsyncTask<JDBCFoodManager, Void, String> task = new MakeServletCall().execute(this);
+        AsyncTask<ServletFoodManager, Void, String> task = new MakeServletCall().execute(this);
 
         while (food==null) {
             try {
@@ -32,13 +38,13 @@ public class JDBCFoodManager implements FavouriteFoodManager {
         return food;
     }
 
-    private class MakeServletCall extends AsyncTask<JDBCFoodManager, Void, String> {
-        JDBCFoodManager manager;
-        protected String doInBackground(JDBCFoodManager... manager) {
+    private class MakeServletCall extends AsyncTask<ServletFoodManager, Void, String> {
+        ServletFoodManager manager;
+        protected String doInBackground(ServletFoodManager... manager) {
             this.manager = manager[0];
             URL url = null;
             try {
-                url = new URL("http://8c46f192.ngrok.io/JDBC");
+                url = new URL("http://" + IP + "/JDBC");
             } catch (MalformedURLException e) {
                 e.printStackTrace();
             }
@@ -56,8 +62,8 @@ public class JDBCFoodManager implements FavouriteFoodManager {
                     e.printStackTrace();
                 }
 
-                String bob = readStream(in);
-                return bob;
+                String returnData = readStream(in);
+                return returnData;
 
             } finally {
                 urlConnection.disconnect();

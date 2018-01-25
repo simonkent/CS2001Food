@@ -59,7 +59,7 @@ public class HelloJDBC extends HttpServlet
 
     private String pullDataFromDatabase() {
 
-        String returnString = "My favourite colour is ";
+        String returnString = "";
             try {
                 //Statement stmt;
                 ResultSet rs;
@@ -74,10 +74,10 @@ public class HelloJDBC extends HttpServlet
                 Statement select = con.createStatement();
 
                 // Execute a query
-                rs = select.executeQuery("SELECT * FROM colour");
+                rs = select.executeQuery("SELECT * FROM test");
 
                 while (rs.next()) {
-                    String name = rs.getString("colour");
+                    String name = rs.getString("name");
                     returnString += name;
                 }
             } catch (ClassNotFoundException e) {
