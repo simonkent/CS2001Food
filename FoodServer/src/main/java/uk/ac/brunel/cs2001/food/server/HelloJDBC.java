@@ -65,7 +65,7 @@ public class HelloJDBC extends HttpServlet
                 ResultSet rs;
 
                 //Register the JDBC driver for MySQL
-                Class.forName("com.mysql.jdbc.Driver");
+                Class.forName("com.mysql.cj.jdbc.Driver");
 
                 String url = "jdbc:mysql://" + IP + "/" + DB +"?useSSL=false";
                 Logger.getLogger(this.getClass().getName()).info("Connecting to url");
